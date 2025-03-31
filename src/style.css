@@ -47,7 +47,9 @@ body {
   align-items: center;
   width: 100%;
   min-width: 320px;
+  max-width: 100vw;
   padding: 10px;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -87,7 +89,7 @@ header[scrolled] {
 
 nav {
   opacity: 0;
-  height: 0;
+  max-height: 0;
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -124,7 +126,7 @@ nav {
 
 nav[opened] {
   opacity: 1;
-  height: calc-size(auto, size);
+  max-height: 300px;
 }
 
 section {

@@ -55,6 +55,19 @@ a {
 
 a:hover {
   filter: drop-shadow(0 0 2rem #F6DC43);
+  background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+a:active {
+  background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 p {
@@ -266,6 +279,10 @@ footer {
 
   li {
     list-style: none;
+  }
+
+  a{
+    font-size: 18px;
   }
 }
 

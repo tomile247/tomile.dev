@@ -170,6 +170,10 @@ section, footer {
   max-width: 1400px;
 }
 
+.nav-trigger {
+  cursor: pointer;
+}
+
 .navigation-header {
   opacity: 0;
   max-height: 0;
@@ -247,6 +251,20 @@ button:focus-visible {
   img {
     width: 50px;
   }
+}
+
+#contact {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  li {
+    list-style: none;
+  }
+
 }
 
 footer {

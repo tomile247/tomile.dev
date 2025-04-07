@@ -57,6 +57,10 @@ a:hover {
   filter: drop-shadow(0 0 2rem #F6DC43);
 }
 
+p {
+  font-size: 20px;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -87,6 +91,7 @@ header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all ease-in 500ms;
+  z-index: 10;
 
   @media only screen and (min-width: 768px) {
     width: 30%;
@@ -104,6 +109,47 @@ header {
 header[scrolled] {
   @media only screen and (min-width: 768px) {
 
+  }
+}
+
+@keyframes highlight {
+    0% {
+
+      background-position: 0 50%;
+    }
+
+    50%{
+
+    }
+
+    100% {
+
+      background-position: 100% 50%;
+    }
+}
+
+.hero {
+  h2 {
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    animation: highlight;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    color: #F6DC43;
+    font-size: 48px;
+    background: linear-gradient(
+            to left,
+            #F6DC43 20%,
+            #A5158C 30%,
+            #A5158C 70%,
+            #F6DC43 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
   }
 }
 

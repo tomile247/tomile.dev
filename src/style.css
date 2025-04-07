@@ -67,6 +67,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: #121212;
+  color: #ffffff;
 }
 
 .logo {
@@ -101,7 +102,9 @@ header {
 }
 
 header[scrolled] {
-  @media only screen and (min-width: 768px) {}
+  @media only screen and (min-width: 768px) {
+
+  }
 }
 
 section, footer {
@@ -130,6 +133,10 @@ section, footer {
   li {
     display: flex;
     justify-content: center;
+  }
+
+  a {
+    font-size: 24px;
   }
 }
 
@@ -247,6 +254,13 @@ footer {
   -webkit-backdrop-filter: blur(10px);
   transition: all ease-in 500ms;
   cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.scroll-to-top[active] {
+  opacity: 1;
+  visibility: visible;
 }
 
 .scroll-to-top:hover {

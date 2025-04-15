@@ -12,28 +12,28 @@
   word-break: break-word;
 
   /* ------------------------------------ */
+    /* DARK TEME PALLETE */
     --color-text: #FFFFFF;
     --color-link: #FFFFFF;
-    --color-icons: #FFFFFF;
+    --color-icon: #FFFFFF;
     --color-background: #121212;
     --color-gradient-1: #F6DC43;
     --color-gradient-2: #A5158C;
     --color-header-background: rgba(255, 255, 255, 0.02);
 
 
-    /*--color-text: #212121;
+    /* LIGHT TEME PALLETE */
+    /*
+
+    --color-text: #212121;
+    --color-link: #212121;
     --color-icons: #FFFFFF;
     --color-background: #ffffff;
     --color-gradient-1: #FABC3F;
     --color-gradient-2: #A91D3A;
-    --color-header-background: rgba(255, 255, 255, 0.02);*/
+    --color-header-background: rgba(255, 255, 255, 0.02);
 
-
-    /*--color-text: #212121;
-    --color-background: #ececec;
-    --color-gradient-1: #40A578;
-    --color-gradient-2: #384B70;
-    --color-header-background: rgba(131, 131, 131, 0.02);*/
+     */
   /* ------------------------------------ */
 
 

@@ -3,27 +3,36 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-
-  --color-primary: ;
-  --color-primary-dark: ;
-  --color-primary-light: ;
-
-  --color-secondary: ;
-  --color-secondary-dark: ;
-  --color-secondary-light: ;
-
-
-
+  text-wrap: auto;
+  word-break: break-word;
 
   /* ------------------------------------ */
+    --color-text: #FFFFFF;
+    --color-icons: #FFFFFF;
     --color-background: #121212;
+    --color-gradient-1: #F6DC43;
+    --color-gradient-2: #A5158C;
+    --color-header-background: rgba(255, 255, 255, 0.02);
+
+
+    /*--color-text: #212121;
+    --color-icons: #FFFFFF;
+    --color-background: #ffffff;
+    --color-gradient-1: #FABC3F;
+    --color-gradient-2: #A91D3A;
+    --color-header-background: rgba(255, 255, 255, 0.02);*/
+
+
+    /*--color-text: #212121;
+    --color-background: #ececec;
+    --color-gradient-1: #40A578;
+    --color-gradient-2: #384B70;
+    --color-header-background: rgba(131, 131, 131, 0.02);*/
   /* ------------------------------------ */
 
 
@@ -39,7 +48,7 @@ h1 {
   font-family: "Boldonse", system-ui;
   font-weight: 400;
   font-style: normal;
-  background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 48px;
@@ -48,14 +57,14 @@ h1 {
 a {
   text-decoration: none;
   font-size: 18px;
-  color: #F6DC43;
+  color: var(--color-gradient-1);
   filter: drop-shadow(0 0 0 transparent);
   transition: all 300ms;
 }
 
 a:hover {
-  filter: drop-shadow(0 0 2rem #F6DC43);
-  background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  filter: drop-shadow(0 0 2rem var(--color-gradient-1));
+  background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 14px;
@@ -63,7 +72,7 @@ a:hover {
 }
 
 a:active {
-  background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 14px;
@@ -83,8 +92,8 @@ body {
   min-width: 320px;
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .logo {
@@ -99,7 +108,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--color-header-background);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -149,14 +158,14 @@ header[scrolled] {
     animation: highlight;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    color: #F6DC43;
+    color: var(--color-gradient-1);
     font-size: 48px;
     background: linear-gradient(
             to left,
-            #F6DC43 20%,
-            #A5158C 30%,
-            #A5158C 70%,
-            #F6DC43 80%
+            var(--color-gradient-1) 20%,
+            var(--color-gradient-2) 30%,
+            var(--color-gradient-2) 70%,
+            var(--color-gradient-1) 80%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -181,8 +190,9 @@ section, footer {
   display: flex;
   overflow: hidden;
   transition: all 300ms;
+  flex-direction: column;
 
-  ul {
+  ul:first-child {
     padding: 20px;
     margin: 0;
     display: flex;
@@ -205,38 +215,41 @@ section, footer {
 
 .navigation-header[opened] {
   opacity: 1;
-  max-height: 300px;
+  max-height: 400px;
+}
+
+.navigation-options {
+  display: flex;
+  gap: 20px;
+
+
+  li {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  li:nth-child(1) {
+    background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+  }
+
+  li:nth-child(2) {
+    background: -webkit-linear-gradient(45deg, #FABC3F, #A91D3A 80%);
+  }
+
+  li:nth-child(3) {
+    background: -webkit-linear-gradient(45deg, #40A578, #384B70 80%);
+  }
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 10px;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 #technology {
@@ -286,7 +299,7 @@ footer {
   }
 
   h3 {
-    background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+    background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -309,10 +322,10 @@ footer {
   justify-content: center;
   border-top-width: 1px;
   border-top-style: solid;
-  border-image: linear-gradient(to right, #F6DC43, #A5158C) 1;
+  border-image: linear-gradient(to right, var(--color-gradient-1), var(--color-gradient-2)) 1;
 
   p {
-    background: -webkit-linear-gradient(45deg, #F6DC43, #A5158C 80%);
+    background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 14px;
@@ -330,7 +343,7 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  border: 3px solid #A5158C;
+  border: 3px solid var(--color-gradient-2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all ease-in 500ms;
@@ -345,8 +358,8 @@ footer {
 }
 
 .scroll-to-top:hover {
-  filter: drop-shadow(0 0 2rem #A5158C);
-  border-color: #F6DC43;
+  filter: drop-shadow(0 0 2rem var(--color-gradient-2));
+  border-color: var(--color-gradient-1);
 }
 
 @media (prefers-color-scheme: light) {

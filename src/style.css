@@ -8,7 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  text-wrap: auto;
+  text-wrap: wrap;
   word-break: break-word;
 
   /* ------------------------------------ */
@@ -45,6 +45,29 @@
   --breakpoint-xxl: 1400px;
 }
 
+.screamer {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  animation: highlight;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  color: var(--color-gradient-1);
+  font-size: 48px;
+  background: linear-gradient(
+          to left,
+          var(--color-gradient-1) 20%,
+          var(--color-gradient-2) 30%,
+          var(--color-gradient-2) 70%,
+          var(--color-gradient-1) 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+}
+
 h1 {
   font-family: "Boldonse", system-ui;
   font-weight: 400;
@@ -52,7 +75,7 @@ h1 {
   background: -webkit-linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 40px;
+  font-size: 32px;
 }
 
 a {
@@ -93,19 +116,22 @@ a:active {
 
 p {
   font-size: 20px;
+  word-break: break-word;
 }
 
 body {
   margin: 0;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  min-width: 320px;
-  max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--color-background);
   color: var(--color-text);
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .logo {
@@ -115,6 +141,7 @@ body {
 
 header {
   position: fixed;
+  top: 10px;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
@@ -133,9 +160,9 @@ header {
 
 
   div {
-    padding: 20px;
     display: flex;
     width: 100%;
+    padding: 20px;
     justify-content: space-between;
   }
 }
@@ -162,54 +189,34 @@ header[scrolled] {
     }
 }
 
-.hero {
-  h2 {
-    font-family: "Boldonse", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    animation: highlight;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    color: var(--color-gradient-1);
-    font-size: 48px;
-    background: linear-gradient(
-            to left,
-            var(--color-gradient-1) 20%,
-            var(--color-gradient-2) 30%,
-            var(--color-gradient-2) 70%,
-            var(--color-gradient-1) 80%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    background-size: 500% auto;
-  }
+#hero,
+#home {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 section, footer {
-  max-width: 1400px;
-}
 
+}
 .nav-trigger {
   cursor: pointer;
 }
 
 .navigation-header {
+  width: 100%;
   opacity: 0;
   max-height: 0;
-  width: 100%;
   display: flex;
   overflow: hidden;
   transition: all 300ms;
   flex-direction: column;
 
   ul {
-    padding: 10px 0;
     margin: 0;
+    padding: 10px;
     display: flex;
     list-style: none;
-    width: 100%;
     justify-content: center;
     gap: 20px;
     flex-direction: column;
@@ -235,14 +242,17 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
+  align-items: flex-start;
+
+  @media only screen and (min-width: 768px) {
+    align-items: center;
+    text-align: center;
+    max-width: 1400px;
+  }
 }
 
 #technology {
   div {
-    padding: 100px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -257,9 +267,9 @@ section {
 #contact {
   ul {
     margin: 0;
-    padding: 0;
     display: flex;
     gap: 20px;
+    padding: 0;
   }
 
   li {
@@ -269,7 +279,7 @@ section {
 }
 
 footer {
-  width: 100%;
+  width: 90%;
 }
 
 .footer__main {
@@ -279,7 +289,6 @@ footer {
   display: flex;
   justify-content: space-between;
   min-width: 320px;
-  padding: 20px;
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;

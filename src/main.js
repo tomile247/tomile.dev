@@ -25,8 +25,8 @@ scrollToTop.addEventListener('click', event => {
 navTrigger.addEventListener('click', event => {
     nav.toggleAttribute('opened');
     if(nav.hasAttribute('opened')) {
-        navTrigger.setAttribute('src', '/assets/icons/close.svg');
+        navTrigger.innerHTML = `<use href="/icons.svg#close"></use>`;
     } else {
-        navTrigger.setAttribute('src', '/assets/icons/menu.svg');
+        navTrigger.innerHTML = `<use href="/icons.svg#menu"></use>`;
     }
 })

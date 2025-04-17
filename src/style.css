@@ -11,32 +11,6 @@
   text-wrap: wrap;
   word-break: break-word;
 
-  /* ------------------------------------ */
-    /* DARK TEME PALLETE */
-    --color-text: #FFFFFF;
-    --color-link: #FFFFFF;
-    --color-icon: #FFFFFF;
-    --color-background: #121212;
-    --color-gradient-1: #F6DC43;
-    --color-gradient-2: #A5158C;
-    --color-header-background: rgba(255, 255, 255, 0.02);
-
-
-    /* LIGHT TEME PALLETE */
-    /*
-
-    --color-text: #212121;
-    --color-link: #212121;
-    --color-icons: #FFFFFF;
-    --color-background: #ffffff;
-    --color-gradient-1: #FABC3F;
-    --color-gradient-2: #A91D3A;
-    --color-header-background: rgba(255, 255, 255, 0.02);
-
-     */
-  /* ------------------------------------ */
-
-
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -124,6 +98,7 @@ body {
   width: 100%;
   min-width: 320px;
   max-width: 1600px;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,6 +112,17 @@ body {
 .logo {
   width: 70px;
   transition: all 500ms;
+}
+
+.icon {
+  color: var(--color-icon);
+  height: 24px;
+  width: 24px;
+}
+
+.icon--big {
+  height: 48px;
+  width: 48px;
 }
 
 header {
@@ -164,6 +150,7 @@ header {
     width: 100%;
     padding: 20px;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -360,14 +347,24 @@ footer {
 
 @media (prefers-color-scheme: light) {
   :root {
-
+    --color-text: #212121;
+    --color-link: #212121;
+    --color-icon: #000000;
+    --color-background: #ffffff;
+    --color-gradient-1: #FABC3F;
+    --color-gradient-2: #A91D3A;
+    --color-header-background: rgba(255, 255, 255, 0.02);
   }
+}
 
-  a:hover {
-
-  }
-
-  button {
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #FFFFFF;
+    --color-link: #FFFFFF;
+    --color-icon: #FFFFFF;
+    --color-background: #121212;
+    --color-gradient-1: #F6DC43;
+    --color-gradient-2: #A5158C;
+    --color-header-background: rgba(255, 255, 255, 0.02);
   }
 }

@@ -1,7 +1,13 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100;
+
+  line-height: 1.5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -216,6 +222,14 @@ section, footer {
 
   a {
     font-size: 24px;
+  }
+
+  .options {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
   }
 }
 

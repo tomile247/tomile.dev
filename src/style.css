@@ -113,6 +113,8 @@ body {
   color: var(--color-text);
   box-sizing: border-box;
   padding: 10px;
+  transition: all linear 250ms;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .logo {
@@ -359,6 +361,10 @@ footer {
   border-color: var(--color-gradient-1);
 }
 
+.theme-icon {
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --color-text: #212121;
@@ -380,5 +386,33 @@ footer {
     --color-gradient-1: #F6DC43;
     --color-gradient-2: #A5158C;
     --color-header-background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.dark-theme {
+  --color-text: #FFFFFF;
+  --color-link: #FFFFFF;
+  --color-icon: #FFFFFF;
+  --color-background: #121212;
+  --color-gradient-1: #F6DC43;
+  --color-gradient-2: #A5158C;
+  --color-header-background: rgba(255, 255, 255, 0.02);
+
+  .js-light-mode {
+    opacity: 0.3;
+  }
+}
+
+.light-theme {
+  --color-text: #212121;
+  --color-link: #212121;
+  --color-icon: #000000;
+  --color-background: #ffffff;
+  --color-gradient-1: #FABC3F;
+  --color-gradient-2: #A91D3A;
+  --color-header-background: rgba(255, 255, 255, 0.02);
+
+  .js-dark-mode {
+    opacity: 0.3;
   }
 }

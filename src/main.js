@@ -10,10 +10,20 @@ const lightMode = document.querySelector('.js-light-mode');
 
 document.addEventListener('DOMContentLoaded', event => {
     const savedTheme = localStorage.getItem('theme');
+
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
-    } else {
+    } else if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
+    }
+
+    if (!savedTheme) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
     }
 });
 
